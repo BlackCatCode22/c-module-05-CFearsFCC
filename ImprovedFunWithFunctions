@@ -1,0 +1,258 @@
+#include <iostream>
+#include <string>
+
+//declare functions
+//to improve, I added my print asterisk and pound divider line as a function instead of repating multiple times
+void printAstSeparator() 
+{
+    std::cout << "******************************************" << std::endl;
+}
+
+void printPndSeparator()
+{
+    std::cout << "******************************************" << std::endl;
+}
+
+int getAnIntFromUser(int x, std::string y)
+{
+    printAstSeparator();
+    std::cout << "please enter a " << y << " number: " << std::endl;
+    printAstSeparator();
+    std::cin >> x;
+    return x;
+}
+
+void sumTwoInts(int x, int y)
+{
+    printAstSeparator();
+    printPndSeparator();
+    std::cout << "Your numbers summed is... " << x + y << std::endl;
+    printPndSeparator();
+    printAstSeparator();
+
+}
+
+void yourNumberIs(int x)
+{
+    printAstSeparator();
+    std::cout << "Your number is... " << x << std::endl;
+    printAstSeparator();
+}
+
+void compareTwoInts(int x, int y)
+{
+    if (x > y)
+    {
+        printAstSeparator();
+        printPndSeparator();
+        std::cout << "The greater number is: " << x << std::endl;
+        printPndSeparator();
+        printAstSeparator();
+    }
+
+    else if (y > x)
+    {
+        printAstSeparator();
+        printPndSeparator();
+        std::cout << "The greater number is: " << y << std::endl;
+        printPndSeparator();
+        printAstSeparator();
+    }
+    else
+    {
+        printAstSeparator();
+        printPndSeparator();
+        std::cout << "The two numbers are equal." << std::endl;
+        printPndSeparator();
+        printAstSeparator();
+    }
+}
+
+//start main
+int main()
+{
+    bool run = true;
+    bool userInt = false;
+    int z = 0;
+
+    while (run == true)
+    {
+        int x{ 0 }, y{ 0 };
+
+        x = (getAnIntFromUser(x, "first"));
+        //yourNumberIs(x);
+
+        y = (getAnIntFromUser(y, "second"));
+        //yourNumberIs(y);
+
+        userInt = true;
+
+        while (userInt == true)
+        {
+            std::cout << "******************************************" << std::endl;
+            std::cout << "Please make a selection 1, 2 or 3: " << std::endl;
+            std::cout << "Type 1 to compare numbers " << std::endl;
+            std::cout << "Type 2 to add numbers " << std::endl;
+            std::cout << "Type 3 to pick new numbers " << std::endl;
+            std::cout << "******************************************" << std::endl;
+
+            std::cin >> z;
+
+            if (z == 1)
+            {
+                compareTwoInts(x, y);
+            }
+
+            else if (z == 2)
+            {
+                sumTwoInts(x, y);
+            }
+            else if (z == 3)
+            {
+                userInt = false;
+            }
+            else
+            {
+                std::cout << "Please enter a 1, 2 or 3 " << std::endl;
+            }
+
+
+        }
+
+    }
+
+
+
+
+
+
+
+
+    return 0;
+}
+
+
+
+/*
+#include <iostream>
+#include <string>
+
+//declare functions
+int getAnIntFromUser(int x, std::string y)
+{
+    std::cout << "******************************************" << std::endl;
+    std::cout << "please enter a " << y << " number: " << std::endl;
+    std::cout << "******************************************" << std::endl;
+    std::cin >> x;
+    return x;
+}
+
+void sumTwoInts(int x, int y)
+{
+    std::cout << "******************************************" << std::endl;
+    std::cout << "##########################################" << std::endl;
+    std::cout << "Your numbers summed is... " << x + y << std::endl;
+    std::cout << "##########################################" << std::endl;
+    std::cout << "******************************************" << std::endl;
+
+}
+
+void yourNumberIs(int x)
+{
+    std::cout << "******************************************" << std::endl;
+    std::cout << "Your number is... " << x << std::endl;
+    std::cout << "******************************************" << std::endl;
+}
+
+void compareTwoInts(int x, int y)
+{
+    if (x > y)
+    {
+        std::cout << "******************************************" << std::endl;
+        std::cout << "##########################################" << std::endl;
+        std::cout << "The greater number is: " << x << std::endl;
+        std::cout << "##########################################" << std::endl;
+        std::cout << "******************************************" << std::endl;
+    }
+
+    else if (y > x)
+    {
+        std::cout << "******************************************" << std::endl;
+        std::cout << "##########################################" << std::endl;
+        std::cout << "The greater number is: " << y << std::endl;
+        std::cout << "##########################################" << std::endl;
+        std::cout << "******************************************" << std::endl;
+    }
+    else
+    {
+        std::cout << "******************************************" << std::endl;
+        std::cout << "##########################################" << std::endl;
+        std::cout << "The two numbers are equal." << std::endl;
+        std::cout << "##########################################" << std::endl;
+        std::cout << "******************************************" << std::endl;
+    }
+}
+
+//start main
+int main()
+{
+    bool run = true;
+    bool userInt = false;
+    int z = 0;
+
+    while (run == true)
+    {
+        int x{ 0 }, y{ 0 };
+
+        x = (getAnIntFromUser(x, "first"));
+        //yourNumberIs(x);
+
+        y = (getAnIntFromUser(y, "second"));
+        //yourNumberIs(y);
+
+        userInt = true;
+
+        while (userInt == true)
+        {
+            std::cout << "******************************************" << std::endl;
+            std::cout << "Please make a selection 1, 2 or 3: " << std::endl;
+            std::cout << "Type 1 to compare numbers " << std::endl;
+            std::cout << "Type 2 to add numbers " << std::endl;
+            std::cout << "Type 3 to pick new numbers " << std::endl;
+            std::cout << "******************************************" << std::endl;
+
+            std::cin >> z;
+
+            if (z == 1)
+            {
+                compareTwoInts(x, y);
+            }
+
+            else if (z == 2)
+            {
+                sumTwoInts(x, y);
+            }
+            else if (z == 3)
+            {
+                userInt = false;
+            }
+            else
+            {
+                std::cout << "Please enter a 1, 2 or 3 " << std::endl;
+            }
+
+
+        }
+
+    }
+
+
+
+
+
+
+
+
+    return 0;
+}
+*/
